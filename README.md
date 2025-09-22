@@ -412,7 +412,7 @@ body.dark-mode .product-modal-content {
   <div class="product-modal-body">
     <!-- Картинка зліва -->
     <div class="product-modal-image">
-      <img src="Photo/4090/4090-removebg-preview.png" alt="NVIDIA RTX 4090">
+      <img src="Photo/4090-removebg-preview.png" alt="NVIDIA RTX 4090">
     </div>
     <!-- Інформація справа -->
     <div class="product-modal-info">
