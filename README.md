@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GPU Store - Магазин відеокарт</title>
   <link rel="stylesheet" href="style.css">
@@ -21,14 +21,12 @@
     body, header, footer, .product-card, .cart-content {
       transition: background 0.4s ease, color 0.4s ease;
     }
-
     body {
       margin: 0;
       font-family: Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
     }
-
     header {
       background: var(--card-bg);
       padding: 1rem;
@@ -85,7 +83,6 @@
       font-size: 0.7rem;
       padding: 2px 5px;
     }
-
     .hero {
       text-align: center;
       padding: 4rem 1rem;
@@ -93,7 +90,6 @@
       color: #fff;
       transition: background 0.4s ease;
     }
-
     .products {
       max-width: 1200px;
       margin: auto;
@@ -145,14 +141,12 @@
       cursor: pointer;
       transition: background 0.3s;
     }
-
     footer {
       background: var(--card-bg);
       text-align: center;
       padding: 2rem 1rem;
       margin-top: 3rem;
     }
-
     /* Кошик */
     .cart-modal {
       display: none;
@@ -162,7 +156,6 @@
       justify-content: center;
       align-items: center;
       z-index: 100;
-      
     }
     .cart-content {
       position: relative;
@@ -184,7 +177,6 @@
       justify-content: space-between;
       margin-bottom: 10px;
     }
-
 .close-cart {
   position: absolute;
   top: 8px;
@@ -195,17 +187,13 @@
   cursor: pointer;
   transition: color 0.2s ease;
 }
-
 .close-cart:hover {
   color: red;
 }
-
-
 .filter-buttons {
   text-align: center;
   margin-bottom: 20px;
 }
-
 .filter-buttons button {
   margin: 5px;
   padding: 10px 15px;
@@ -217,11 +205,9 @@
   font-weight: bold;
   transition: 0.3s ease;
 }
-
 .filter-buttons button:hover {
   background: #333;      
 }
-
 .filter-buttons button.active {
   background: #007bff;   
 }
@@ -239,7 +225,6 @@
     .filter-buttons button:hover {
       background: #333;
     }
-
     /* Модальне вікно товару */
     .product-modal {
       display: none;
@@ -272,21 +257,15 @@
       max-width: 100%;
       border-radius: 10px;
     }
-
-
-    
-    
-.product-modal-content {
+    .product-modal-content {
   background: var(--bg-color);
   color: var(--text-color);
-}
-
+    }
 .product-modal-content h2,
 .product-modal-content p,
 .product-modal-content h3 {
   color: var(--text-color);
 }
-
 .product-modal {
   display: none; /* приховане за замовчуванням */
   position: fixed;
@@ -298,7 +277,6 @@
   overflow: auto;
   background: rgba(0, 0, 0, 0.7); /* задній фон */
 }
-
 .product-modal-content {
   background: #fff;
   margin: 10% auto;
@@ -313,13 +291,11 @@
   box-shadow: 0 8px 25px rgba(0,0,0,0.3);
   text-align: center;
 }
-
 .close-modal {
   float: right;
   font-size: 24px;
   cursor: pointer;
 }
-
 .product-modal-content {
   background: #4e4e4e;
   color: #000;
@@ -382,19 +358,16 @@ body.dark-mode .product-modal-content {
     <button onclick="filterProducts('amd')">AMD</button>
     <button onclick="filterProducts('intel')">Intel</button>
   </div>
-
   <section class="products" id="products">
     <h2 class="section-title">Наші товари</h2>
-    
     <div class="product-grid">
       <!-- NVIDIA RTX 4090 -->
       <div class="product-card" data-brand="nvidia" onclick="showProductInfo('modal4090')">
-        <img src="Photo/4090.png" alt="NVIDIA RTX 4090">
+        <img src="Photo/4090-removebg-preview.png" alt="NVIDIA RTX 4090">
         <div class="product-name">NVIDIA RTX 4090</div>
         <div class="product-price">65 000 ₴</div>
         <button class="buy-btn" onclick="event.stopPropagation(); addToCart('NVIDIA RTX 4090', 65000)">Купити</button>
       </div>
-
       <!-- NVIDIA RTX 4080 -->
       <div class="product-card" data-brand="nvidia" onclick="showProductInfo('modal4080')">
         <img src="Photo/4080/4080.jpg" alt="NVIDIA RTX 4080">
@@ -402,7 +375,6 @@ body.dark-mode .product-modal-content {
         <div class="product-price">45 000 ₴</div>
         <button class="buy-btn" onclick="event.stopPropagation(); addToCart('NVIDIA RTX 4080', 45000)">Купити</button>
       </div>
-
       <!-- AMD RX 7900 XTX -->
       <div class="product-card" data-brand="amd" onclick="showProductInfo('modal7900')">
         <img src="Photo/7900xtx/7900xtx.jpg" alt="AMD RX 7900 XTX">
@@ -410,7 +382,6 @@ body.dark-mode .product-modal-content {
         <div class="product-price">42 000 ₴</div>
         <button class="buy-btn" onclick="event.stopPropagation(); addToCart('AMD RX 7900 XTX', 42000)">Купити</button>
       </div>
-
       <!-- Intel ARC A770 -->
       <div class="product-card" data-brand="intel" onclick="showProductInfo('modalArc')">
         <img src="Photo/arc/arc.jpg" alt="Intel ARC A770">
@@ -420,7 +391,6 @@ body.dark-mode .product-modal-content {
       </div>
     </div>
   </section>
-
   <footer id="contact">
     <p>📞 +380 (XX) XXX-XX-XX</p>
     <p>📧 info@gpustore.ua</p>
@@ -437,7 +407,6 @@ body.dark-mode .product-modal-content {
       <button class="buy-btn" onclick="checkout()">Оформити замовлення</button>
     </div>
   </div>
-
   <!-- Модальні вікна -->
   <div class="product-modal" id="modal4090">
       <span class="close-modal" onclick="closeProductModal('modal4090')">&times;</span>
@@ -449,7 +418,6 @@ body.dark-mode .product-modal-content {
     <div class="product-modal-image">
       <img src="Photo/4090/4090-removebg-preview.png" alt="NVIDIA RTX 4090">
     </div>
-
     <!-- Інформація справа -->
     <div class="product-modal-info">
       <h2>NVIDIA RTX 4090</h2>
@@ -491,7 +459,6 @@ body.dark-mode .product-modal-content {
 <> 
   <script src="script.js">
         let cart = [];
-
     function addToCart(name, price) {
       const item = cart.find(p => p.name === name);
       if (item) {
@@ -501,16 +468,13 @@ body.dark-mode .product-modal-content {
       }
       updateCart();
     }
-
     function updateCart() {
       const cartCount = document.getElementById('cartCount');
       const cartItems = document.getElementById('cartItems');
       const cartTotal = document.getElementById('cartTotal');
-
       let totalQty = 0;
       let totalPrice = 0;
       cartItems.innerHTML = '';
-
       cart.forEach(item => {
         totalQty += item.qty;
         totalPrice += item.qty * item.price;
@@ -520,18 +484,14 @@ body.dark-mode .product-modal-content {
           </div>
         `;
       });
-
       if (cart.length === 0) cartItems.innerHTML = 'Кошик порожній';
-
       cartCount.textContent = totalQty;
       cartTotal.textContent = `Загальна сума: ${totalPrice} ₴`;
     }
-
     function toggleCart() {
       const modal = document.getElementById('cartModal');
       modal.style.display = modal.style.display === 'flex' ? 'none' : 'flex';
     }
-
     function checkout() {
       if (cart.length === 0) {
         alert('Кошик порожній!');
@@ -542,7 +502,6 @@ body.dark-mode .product-modal-content {
       updateCart();
       toggleCart();
     }
-
     // 🔄 Перемикання теми
     const themeToggle = document.getElementById('themeToggle');
     function setTheme(theme) {
@@ -556,12 +515,8 @@ body.dark-mode .product-modal-content {
     });
     const savedTheme = localStorage.getItem('theme') || 'dark';
     setTheme(savedTheme);
-
-
-
 function filterProducts(brand) {
   let products = document.querySelectorAll('.product-card');
-
   products.forEach(product => {
     if (brand === 'all' || product.dataset.brand === brand) {
       product.style.display = 'block';
@@ -570,11 +525,9 @@ function filterProducts(brand) {
     }
   });
 }
-
 function filterProducts(brand) {
   let products = document.querySelectorAll('.product-card');
   let buttons = document.querySelectorAll('.filter-buttons button');
-
   // показуємо тільки потрібні продукти
   products.forEach(product => {
     if (brand === 'all' || product.dataset.brand === brand) {
@@ -583,14 +536,11 @@ function filterProducts(brand) {
       product.style.display = 'none';
     }
   });
-
   // прибираємо активний клас у всіх кнопок
   buttons.forEach(btn => btn.classList.remove('active'));
-
   // додаємо активний клас тій кнопці, яку натиснули
   event.target.classList.add('active');
 }
-
     function showProductInfo(name, price, image, description) {
       document.getElementById('modalProductName').innerText = name;
       document.getElementById('modalProductPrice').innerText = price;
@@ -598,43 +548,34 @@ function filterProducts(brand) {
       document.getElementById('modalProductDescription').innerText = description;
       document.getElementById('productModal').style.display = "block";
     }
-
     function closeProductModal() {
       document.getElementById('productModal').style.display = "none";
     }
-
     window.onclick = function(event) {
       if (event.target == document.getElementById('productModal')) {
         closeProductModal();
       }
     }
-
     document.getElementById("themeToggle").addEventListener("click", () => {
   document.body.classList.toggle("dark-theme");
 });
-
 function showProductInfo(productId) {
   // ховаємо всі блоки з товарами в модалці
   document.querySelectorAll('.product-info').forEach(el => el.style.display = 'none');
-
   // показуємо потрібний
   document.getElementById(productId).style.display = 'block';
-
   // відкриваємо модалку
   document.getElementById("productModal").style.display = "flex";
 }
-
 function closeProductModal() {
   document.getElementById("productModal").style.display = "none";
 }
  function showProductInfo(id) {
   document.getElementById(id).style.display = "block";
 }
-
 function closeProductModal(id) {
   document.getElementById(id).style.display = "none";
 }
-
 // Закриття при кліку поза вікном
 window.onclick = function(event) {
   const modals = document.getElementsByClassName("product-modal");
