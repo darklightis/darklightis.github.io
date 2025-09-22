@@ -418,6 +418,13 @@ body.dark-mode .product-modal-content {
     <div class="product-modal-info">
       <h2>NVIDIA RTX 4090</h2>
       <p>Найпотужніша відеокарта для геймінгу та роботи з 3D.</p>
+      <p>Графічний чип GeForce RTX 4090</p>
+      <p>Обсяг пам'яті24 ГБ</p>
+      <p>Система охолодження активна</p>
+      <p>Максимально підтримувана роздільна здатність7680x4320</p>
+      <p>Тип пам'яті GDDR6X</p>
+      <p>Розміри 357,6 x 149,3 x 70,1 мм</p>
+      <p>Додаткове живлення 16 pin</p>
       <h3>65 000 ₴</h3>
       <button class="buy-btn" onclick="addToCart('NVIDIA RTX 4090', 65000)">Купити</button>
     </div>
