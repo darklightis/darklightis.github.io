@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPU Store - Магазин відеокарт</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">🎮 GPU Store</div>
+      <ul class="nav-menu">
+        <li><a href="#home">Головна</a></li>
+        <li><a href="#products">Товари</a></li>
+        <li><a href="#contact">Контакти</a></li>
+        <li><button class="theme-toggle" id="themeToggle">🌙</button></li>
+        <li class="cart-icon" onclick="toggleCart()">🛒<span class="cart-count" id="cartCount">0</span></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h1>Найкращі відеокарти за найкращими цінами</h1>
+    <p>Вибери свою ідеальну GPU прямо зараз</p>
+  </section>
+
+  <div class="filter-buttons">
+    <button onclick="filterProducts('all')">Всі</button>
+    <button onclick="filterProducts('nvidia')">NVIDIA</button>
+    <button onclick="filterProducts('amd')">AMD</button>
+    <button onclick="filterProducts('intel')">Intel</button>
+  </div>
+
+  <section class="products" id="products">
+    <h2 class="section-title">Наші товари</h2>
+    
+    <div class="product-grid">
+      <!-- NVIDIA RTX 4090 -->
+      <div class="product-card" data-brand="nvidia" onclick="showProductInfo('modal4090')">
+        <img src="Photo/4090.png" alt="NVIDIA RTX 4090">
+        <div class="product-name">NVIDIA RTX 4090</div>
+        <div class="product-price">65 000 ₴</div>
+        <button class="buy-btn" onclick="event.stopPropagation(); addToCart('NVIDIA RTX 4090', 65000)">Купити</button>
+      </div>
+
+      <!-- NVIDIA RTX 4080 -->
+      <div class="product-card" data-brand="nvidia" onclick="showProductInfo('modal4080')">
+        <img src="Photo/4080/4080.jpg" alt="NVIDIA RTX 4080">
+        <div class="product-name">NVIDIA RTX 4080</div>
+        <div class="product-price">45 000 ₴</div>
+        <button class="buy-btn" onclick="event.stopPropagation(); addToCart('NVIDIA RTX 4080', 45000)">Купити</button>
+      </div>
+
+      <!-- AMD RX 7900 XTX -->
+      <div class="product-card" data-brand="amd" onclick="showProductInfo('modal7900')">
+        <img src="Photo/7900xtx/7900xtx.jpg" alt="AMD RX 7900 XTX">
+        <div class="product-name">AMD RX 7900 XTX</div>
+        <div class="product-price">42 000 ₴</div>
+        <button class="buy-btn" onclick="event.stopPropagation(); addToCart('AMD RX 7900 XTX', 42000)">Купити</button>
+      </div>
+
+      <!-- Intel ARC A770 -->
+      <div class="product-card" data-brand="intel" onclick="showProductInfo('modalArc')">
+        <img src="Photo/arc/arc.jpg" alt="Intel ARC A770">
+        <div class="product-name">Intel ARC A770</div>
+        <div class="product-price">25 000 ₴</div>
+        <button class="buy-btn" onclick="event.stopPropagation(); addToCart('Intel ARC A770', 25000)">Купити</button>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>📞 +380 (XX) XXX-XX-XX</p>
+    <p>📧 info@gpustore.ua</p>
+    <p>📍 м. Київ, вул. Технологічна, 1</p>
+    <p>&copy; 2025 GPU Store. Усі права захищені.</p>
+  </footer>
+
+  <div class="cart-modal" id="cartModal" style="display:none;">
+    <div class="cart-content">
+      <span class="close-cart" onclick="toggleCart()">&times;</span>
+      <h2 class="text-center">Кошик</h2>
+      <div id="cartItems">Кошик порожній</div>
+      <div id="cartTotal">Загальна сума: 0 ₴</div>
+      <button class="buy-btn" onclick="checkout()">Оформити замовлення</button>
+    </div>
+  </div>
+
+  <!-- Модальні вікна -->
+  <div class="product-modal" id="modal4090">
+      <span class="close-modal" onclick="closeProductModal('modal4090')">&times;</span>
+      <div class="product-modal-content">
+  <span class="close-modal" onclick="closeProductModal()">&times;</span>
+
+  <div class="product-modal-body">
+    <!-- Картинка зліва -->
+    <div class="product-modal-image">
+      <img src="Photo/4090/4090-removebg-preview.png" alt="NVIDIA RTX 4090">
+    </div>
+
+    <!-- Інформація справа -->
+    <div class="product-modal-info">
+      <h2>NVIDIA RTX 4090</h2>
+      <p>Найпотужніша відеокарта для геймінгу та роботи з 3D.</p>
+      <h3>65 000 ₴</h3>
+      <button class="buy-btn" onclick="addToCart('NVIDIA RTX 4090', 65000)">Купити</button>
+    </div>
+  </div>
+
+  <div class="product-modal" id="modal4080">
+    <div class="product-modal-content">
+      <span class="close-modal" onclick="closeProductModal('modal4080')">&times;</span>
+      <h2>NVIDIA RTX 4080</h2>
+      <img src="Photo/4080/4080.jpg" alt="">
+      <p>Потужна відеокарта для 4K ігор.</p>
+      <h3>45 000 ₴</h3>
+    </div>
+  </div>
+
+  <div class="product-modal" id="modal7900">
+    <div class="product-modal-content">
+      <span class="close-modal" onclick="closeProductModal('modal7900')">&times;</span>
+      <h2>AMD RX 7900 XTX</h2>
+      <img src="Photo/7900xtx/7900xtx.jpg" alt="">
+      <p>Флагманська відеокарта від AMD.</p>
+      <h3>42 000 ₴</h3>
+    </div>
+  </div>
+
+  <div class="product-modal" id="modalArc">
+    <div class="product-modal-content">
+      <span class="close-modal" onclick="closeProductModal('modalArc')">&times;</span>
+      <h2>Intel ARC A770</h2>
+      <img src="Photo/arc/arc.jpg" alt="">
+      <p>Перша потужна відеокарта від Intel для геймінгу.</p>
+      <h3>25 000 ₴</h3>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
