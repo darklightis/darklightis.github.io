@@ -346,12 +346,10 @@ body.dark-mode .product-modal-content {
       </ul>
     </nav>
   </header>
-
   <section class="hero" id="home">
     <h1>Найкращі відеокарти за найкращими цінами</h1>
     <p>Вибери свою ідеальну GPU прямо зараз</p>
   </section>
-
   <div class="filter-buttons">
     <button onclick="filterProducts('all')">Всі</button>
     <button onclick="filterProducts('nvidia')">NVIDIA</button>
@@ -397,7 +395,6 @@ body.dark-mode .product-modal-content {
     <p>📍 м. Київ, вул. Технологічна, 1</p>
     <p>&copy; 2025 GPU Store. Усі права захищені.</p>
   </footer>
-
   <div class="cart-modal" id="cartModal" style="display:none;">
     <div class="cart-content">
       <span class="close-cart" onclick="toggleCart()">&times;</span>
@@ -412,7 +409,6 @@ body.dark-mode .product-modal-content {
       <span class="close-modal" onclick="closeProductModal('modal4090')">&times;</span>
       <div class="product-modal-content">
   <span class="close-modal" onclick="closeProductModal()">&times;</span>
-
   <div class="product-modal-body">
     <!-- Картинка зліва -->
     <div class="product-modal-image">
@@ -426,7 +422,6 @@ body.dark-mode .product-modal-content {
       <button class="buy-btn" onclick="addToCart('NVIDIA RTX 4090', 65000)">Купити</button>
     </div>
   </div>
-
   <div class="product-modal" id="modal4080">
     <div class="product-modal-content">
       <span class="close-modal" onclick="closeProductModal('modal4080')">&times;</span>
@@ -436,7 +431,6 @@ body.dark-mode .product-modal-content {
       <h3>45 000 ₴</h3>
     </div>
   </div>
-
   <div class="product-modal" id="modal7900">
     <div class="product-modal-content">
       <span class="close-modal" onclick="closeProductModal('modal7900')">&times;</span>
@@ -446,7 +440,6 @@ body.dark-mode .product-modal-content {
       <h3>42 000 ₴</h3>
     </div>
   </div>
-
   <div class="product-modal" id="modalArc">
     <div class="product-modal-content">
       <span class="close-modal" onclick="closeProductModal('modalArc')">&times;</span>
@@ -455,8 +448,6 @@ body.dark-mode .product-modal-content {
       <p>Перша потужна відеокарта від Intel для геймінгу.</p>
       <h3>25 000 ₴</h3>
     </div>
-  </div>
-<> 
   <script src="script.js">
         let cart = [];
     function addToCart(name, price) {
