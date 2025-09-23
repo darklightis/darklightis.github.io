@@ -488,10 +488,11 @@
   justify-content: center;
 }
 .footer-mascot img {
-  max-width: 120px;
+  max-width: 90px;
   height: auto;
   display: block;
 }
+
   </style>
 </head>
 <body>
@@ -530,7 +531,6 @@
         <div class="product-price">65 000 ₴</div>
         <button class="buy-btn" onclick="event.stopPropagation(); addToCart('NVIDIA RTX 4090', 65000)">Купити</button>
       </div>
-      
       <!-- NVIDIA RTX 4080 -->
       <div class="product-card" data-brand="nvidia" onclick="showProductInfo('modal4080')">
         <img src="Photo/4080/4080.jpg" alt="NVIDIA RTX 4080">
@@ -538,7 +538,6 @@
         <div class="product-price">45 000 ₴</div>
         <button class="buy-btn" onclick="event.stopPropagation(); addToCart('NVIDIA RTX 4080', 45000)">Купити</button>
       </div>
-      
       <!-- AMD RX 7900 XTX -->
       <div class="product-card" data-brand="amd" onclick="showProductInfo('modal7900')">
         <img src="Photo/7900xtx/7900xtx.jpg" alt="AMD RX 7900 XTX">
@@ -546,7 +545,6 @@
         <div class="product-price">42 000 ₴</div>
         <button class="buy-btn" onclick="event.stopPropagation(); addToCart('AMD RX 7900 XTX', 42000)">Купити</button>
       </div>
-      
       <!-- Intel ARC A770 -->
       <div class="product-card" data-brand="intel" onclick="showProductInfo('modalArc')">
         <img src="Photo/arc/arc.jpg" alt="Intel ARC A770">
