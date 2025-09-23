@@ -198,7 +198,73 @@
     .cart-item {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 10px;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 10px;
+      background: var(--bg);
+      border-radius: 8px;
+      color: var(--text);
+    }
+    
+    .cart-item-info {
+      flex: 1;
+      text-align: left;
+    }
+    
+    .cart-item-name {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    
+    .cart-item-price {
+      font-size: 0.9rem;
+      color: var(--accent);
+    }
+    
+    .cart-item-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .cart-btn {
+      width: 30px;
+      height: 30px;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+    }
+    
+    .cart-btn.decrease, .cart-btn.increase {
+      background: var(--accent);
+      color: white;
+    }
+    
+    .cart-btn.decrease:hover, .cart-btn.increase:hover {
+      background: #0099cc;
+      transform: scale(1.1);
+    }
+    
+    .cart-btn.remove {
+      background: #ff4757;
+      color: white;
+    }
+    
+    .cart-btn.remove:hover {
+      background: #ff3742;
+      transform: scale(1.1);
+    }
+    
+    .quantity {
+      min-width: 20px;
+      text-align: center;
+      font-weight: bold;
       color: var(--text);
     }
     .close-cart {
@@ -501,13 +567,21 @@
       let totalPrice = 0;
       cartItems.innerHTML = '';
       
-      cart.forEach(item => {
+      cart.forEach((item, index) => {
         totalQty += item.qty;
         totalPrice += item.qty * item.price;
         cartItems.innerHTML += `
           <div class="cart-item">
-            <span>${item.name} × ${item.qty}</span>
-            <strong>${(item.price * item.qty).toLocaleString()} ₴</strong>
+            <div class="cart-item-info">
+              <div class="cart-item-name">${item.name}</div>
+              <div class="cart-item-price">${item.price.toLocaleString()} ₴ × ${item.qty} = ${(item.price * item.qty).toLocaleString()} ₴</div>
+            </div>
+            <div class="cart-item-controls">
+              <button class="cart-btn decrease" onclick="changeQuantity(${index}, -1)">−</button>
+              <span class="quantity">${item.qty}</span>
+              <button class="cart-btn increase" onclick="changeQuantity(${index}, 1)">+</button>
+              <button class="cart-btn remove" onclick="removeFromCart(${index})">&times;</button>
+            </div>
           </div>
         `;
       });
@@ -515,6 +589,19 @@
       if (cart.length === 0) cartItems.innerHTML = 'Кошик порожній';
       cartCount.textContent = totalQty;
       cartTotal.textContent = `Загальна сума: ${totalPrice.toLocaleString()} ₴`;
+    }
+    
+    function changeQuantity(index, change) {
+      cart[index].qty += change;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCart();
+    }
+    
+    function removeFromCart(index) {
+      cart.splice(index, 1);
+      updateCart();
     }
     
     function toggleCart() {
