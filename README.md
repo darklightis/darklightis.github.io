@@ -16,11 +16,9 @@
       --card-bg: #fff;
       --accent: #0077ff;
     }
-    
     * {
       box-sizing: border-box;
     }
-    
     body, header, footer, .product-card, .cart-content, .product-modal-content {
       transition: background 0.4s ease, color 0.4s ease;
     }
@@ -170,7 +168,6 @@
       margin-top: 3rem;
       width: 100%;
     }
-    
     .filter-buttons {
       text-align: center;
       margin: 2rem 0;
@@ -193,7 +190,6 @@
     .filter-buttons button.active {
       background: var(--accent);
     }
-    
     /* Кошик */
     .cart-modal {
       display: none;
@@ -228,24 +224,20 @@
       color: var(--text);
       flex-wrap: wrap;
     }
-    
     .cart-item-info {
       flex: 1;
       text-align: left;
       min-width: 150px;
     }
-    
     .cart-item-name {
       font-weight: bold;
       margin-bottom: 5px;
       font-size: 0.9rem;
     }
-    
     .cart-item-price {
       font-size: 0.8rem;
       color: var(--accent);
     }
-    
     .cart-item-controls {
       display: flex;
       align-items: center;
@@ -253,7 +245,6 @@
       flex-wrap: wrap;
       justify-content: center;
     }
-    
     .cart-btn {
       width: 30px;
       height: 30px;
@@ -267,27 +258,22 @@
       justify-content: center;
       transition: all 0.2s ease;
     }
-    
     .cart-btn.decrease, .cart-btn.increase {
       background: var(--accent);
       color: white;
     }
-    
     .cart-btn.decrease:hover, .cart-btn.increase:hover {
       background: #0099cc;
       transform: scale(1.1);
     }
-    
     .cart-btn.remove {
       background: #ff4757;
       color: white;
     }
-    
     .cart-btn.remove:hover {
       background: #ff3742;
       transform: scale(1.1);
     }
-    
     .quantity {
       min-width: 20px;
       text-align: center;
@@ -307,7 +293,6 @@
     .close-cart:hover {
       color: red;
     }
-    
     /* Модальні вікна товарів */
     .product-modal {
       display: none;
@@ -336,7 +321,6 @@
       max-height: 90vh;
       overflow-y: auto;
     }
-    
     .close-modal {
       position: absolute;
       top: 15px;
@@ -351,7 +335,6 @@
     .close-modal:hover {
       color: red;
     }
-    
     .product-modal-body {
       display: flex;
       align-items: flex-start;
@@ -383,7 +366,6 @@
       font-size: 1.8rem;
       margin: 20px 0 15px 0;
     }
-    
     /* Мобільні стилі */
     @media (max-width: 768px) {
       .hero {
@@ -414,7 +396,6 @@
         margin: 3px;
         font-size: 0.8rem;
       }
-      
       .product-modal-content {
         width: 95%;
         margin: 0 auto;
@@ -439,8 +420,6 @@
       .cart-item-info {
         text-align: center;
       }
-    }
-
     @media (max-width: 480px) {
       .nav-menu {
         flex-wrap: wrap;
@@ -486,6 +465,33 @@
       max-width: 120px; /* можна змінити розмір */
       height: auto;
     }
+      /* Футер */
+#contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px; /* додав більше відступів для рівності з hero */
+  background: var(--card-bg); /* той же фон, що й у header / карток */
+  max-width: 1200px; /* вирівнювання з секціями */
+  margin: 0 auto;
+  border-radius: 10px 10px 0 0; /* акуратні закруглення */
+}
+.footer-info {
+  text-align: left;
+}
+.footer-mascot {
+  background: rgba(0, 0, 0, 0.05); /* фон контейнера */
+  padding: 10px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.footer-mascot img {
+  max-width: 120px;
+  height: auto;
+  display: block;
+}
   </style>
 </head>
 <body>
