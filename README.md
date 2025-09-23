@@ -16,11 +16,17 @@
       --card-bg: #fff;
       --accent: #0077ff;
     }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
     body, header, footer, .product-card, .cart-content, .product-modal-content {
       transition: background 0.4s ease, color 0.4s ease;
     }
     body {
       margin: 0;
+      padding: 0;
       font-family: Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
@@ -31,13 +37,15 @@
       position: sticky;
       top: 0;
       z-index: 10;
+      width: 100%;
     }
     nav {
       display: flex;
       justify-content: space-between;
       align-items: center;
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
+      width: 100%;
     }
     .logo {
       font-weight: bold;
@@ -87,11 +95,14 @@
       background: linear-gradient(135deg, var(--accent), #5b86e5);
       color: #fff;
       transition: background 0.4s ease;
+      width: 100%;
+      margin: 0;
     }
     .products {
       max-width: 1200px;
-      margin: auto;
+      margin: 0 auto;
       padding: 2rem 1rem;
+      width: 100%;
     }
     .section-title {
       text-align: center;
@@ -100,8 +111,9 @@
     }
     .product-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
+      width: 100%;
     }
     .product-card {
       background: var(--card-bg);
@@ -112,6 +124,7 @@
       box-shadow: 0 6px 12px rgba(0,0,0,0.2);
       cursor: pointer;
       transition: transform 0.3s ease;
+      width: 100%;
     }
     .product-card:hover {
       transform: translateY(-5px);
@@ -127,6 +140,7 @@
     .product-name {
       margin: 1rem 0 0.5rem;
       font-weight: bold;
+      font-size: 1.1rem;
     }
     .product-price {
       color: var(--accent);
@@ -143,6 +157,8 @@
       font-weight: bold;
       cursor: pointer;
       transition: background 0.3s;
+      width: 100%;
+      max-width: 150px;
     }
     .buy-btn:hover {
       transform: translateY(-2px);
@@ -152,11 +168,13 @@
       text-align: center;
       padding: 2rem 1rem;
       margin-top: 3rem;
+      width: 100%;
     }
     
     .filter-buttons {
       text-align: center;
       margin: 2rem 0;
+      padding: 0 1rem;
     }
     .filter-buttons button {
       background: #000;
@@ -167,6 +185,7 @@
       margin: 5px;
       cursor: pointer;
       transition: 0.3s;
+      font-size: 0.9rem;
     }
     .filter-buttons button:hover {
       background: #333;
@@ -184,6 +203,7 @@
       justify-content: center;
       align-items: center;
       z-index: 100;
+      padding: 1rem;
     }
     .cart-content {
       position: relative;
@@ -191,9 +211,11 @@
       color: var(--text);
       padding: 1.5rem;
       border-radius: 10px;
-      width: 90%;
+      width: 100%;
       max-width: 400px;
       text-align: center;
+      max-height: 90vh;
+      overflow-y: auto;
     }
     .cart-item {
       display: flex;
@@ -204,20 +226,23 @@
       background: var(--bg);
       border-radius: 8px;
       color: var(--text);
+      flex-wrap: wrap;
     }
     
     .cart-item-info {
       flex: 1;
       text-align: left;
+      min-width: 150px;
     }
     
     .cart-item-name {
       font-weight: bold;
       margin-bottom: 5px;
+      font-size: 0.9rem;
     }
     
     .cart-item-price {
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       color: var(--accent);
     }
     
@@ -225,6 +250,8 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     
     .cart-btn {
@@ -294,17 +321,20 @@
       background: rgba(0, 0, 0, 0.7);
       justify-content: center;
       align-items: center;
+      padding: 1rem;
     }
     .product-modal-content {
       background: var(--card-bg);
       color: var(--text);
-      margin: 5% auto;
+      margin: 0 auto;
       padding: 30px;
       border-radius: 15px;
-      width: 90%;
+      width: 100%;
       max-width: 800px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.3);
       position: relative;
+      max-height: 90vh;
+      overflow-y: auto;
     }
     
     .close-modal {
@@ -354,10 +384,40 @@
       margin: 20px 0 15px 0;
     }
     
+    /* Мобільні стилі */
     @media (max-width: 768px) {
+      .hero {
+        padding: 2rem 1rem;
+      }
+      .hero h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      .nav-menu {
+        gap: 0.5rem;
+      }
+      .nav-menu a {
+        font-size: 0.9rem;
+      }
+      .logo {
+        font-size: 1.1rem;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+      .product-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1rem;
+      }
+      .filter-buttons button {
+        padding: 8px 15px;
+        margin: 3px;
+        font-size: 0.8rem;
+      }
+      
       .product-modal-content {
         width: 95%;
-        margin: 2% auto;
+        margin: 0 auto;
         padding: 20px;
       }
       .product-modal-body {
@@ -370,6 +430,47 @@
       }
       .product-modal-info {
         text-align: center;
+      }
+      .cart-item {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
+      .cart-item-info {
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .nav-menu {
+        flex-wrap: wrap;
+        gap: 0.3rem;
+      }
+      .nav-menu a {
+        font-size: 0.8rem;
+      }
+      .hero h1 {
+        font-size: 1.3rem;
+      }
+      .hero p {
+        font-size: 0.9rem;
+      }
+      .product-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .filter-buttons {
+        padding: 0 0.5rem;
+      }
+      .filter-buttons button {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+      }
+      .product-modal-content {
+        padding: 15px;
+      }
+      .cart-content {
+        padding: 1rem;
       }
     }
   </style>
@@ -624,14 +725,13 @@
     const themeToggle = document.getElementById('themeToggle');
     function setTheme(theme) {
       document.documentElement.setAttribute('data-theme', theme);
-      localStorage.setItem('theme', theme);
       themeToggle.textContent = theme === 'dark' ? '🌙' : '☀️';
     }
     themeToggle.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-theme') || 'dark';
       setTheme(current === 'dark' ? 'light' : 'dark');
     });
-    const savedTheme = localStorage.getItem('theme') || 'dark';
+    const savedTheme = 'dark';
     setTheme(savedTheme);
     
     // Фільтрація продуктів
