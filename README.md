@@ -472,6 +472,19 @@
       .cart-content {
         padding: 1rem;
       }
+    #contact {
+       display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      background: #f5f5f5;
+    }
+    .footer-info {
+      text-align: left;
+    }
+    .footer-mascot img {
+      max-width: 120px; /* можна змінити розмір */
+      height: auto;
     }
   </style>
 </head>
@@ -539,13 +552,19 @@
   </section>
   
   <footer id="contact">
+  <div class="footer-info">
     <p>📞 +380 (XX) XXX-XX-XX</p>
     <p>📧 info@gpustore.ua</p>
     <p>📍 м. Київ, вул. Технологічна, 1</p>
     <p>&copy; 2025 GPU Store. Усі права захищені.</p>
     <p>Маскот:</p>
-     <img src="Photo/Maskot.webp">
-  </footer>
+  </div>
+
+  <div class="footer-mascot">
+    <img src="Photo/Maskot.webp" alt="Маскот">
+  </div>
+</footer>
+
   
   <!-- Кошик -->
   <div class="cart-modal" id="cartModal">
