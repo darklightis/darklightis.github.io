@@ -3,6 +3,7 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GPU Store - Магазин відеокарт</title>
+  
   <style>
     :root {
       --bg: #121212;
@@ -519,6 +520,30 @@
   font-size: 0.9rem;
   color: #aaa;
 }
+    .nav-menu {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+  justify-content: center; /* центрування */
+  gap: 0; /* прибираємо зайві відступи */
+}
+
+.nav-menu li {
+  flex: 1;              /* всі однакові по ширині */
+  text-align: center;   /* вирівнювання тексту */
+}
+
+.nav-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
 
   </style>
 </head>
@@ -536,7 +561,7 @@
     </nav>
   </header>
   
-  <section class="hero" id="home">
+  <section class="hero" id="">
     <h1>Найкращі відеокарти за найкращими цінами</h1>
     <p>Вибери свою ідеальну GPU прямо зараз</p>
   </section>
