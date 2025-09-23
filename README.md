@@ -461,9 +461,6 @@
     .footer-info {
       text-align: left;
     }
-    .footer-mascot img {
-      max-width: 120px; /* можна змінити розмір */
-      height: auto;
     }
       /* Футер */
 #contact {
@@ -487,10 +484,40 @@
   align-items: center;
   justify-content: center;
 }
+}
+  footer {
+  background: var(--card-bg);
+  padding: 2rem 1rem;
+  color: var(--text);
+}
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+}
+.footer-column h3 {
+  margin-bottom: 1rem;
+  color: var(--accent);
+}
+}
 .footer-mascot img {
-  max-width: 90px;
+  max-width: 90px; /* трохи менший розмір */
   height: auto;
-  display: block;
+  border-radius: 8px;
+}
+.footer-copy {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #aaa;
 }
 
   </style>
@@ -554,22 +581,32 @@
       </div>
     </div>
   </section>
-  
-  <footer id="contact">
-  <div class="footer-info">
-    <p>📞 +380 (68) 804-07-26</p>
-    <p>📧 info@gpustore.ua</p>
-    <p>📍 м. Київ, вул. Технологічна, 1</p>
-    <p>&copy; 2025 GPU Store. Усі права захищені.</p>
-    <p>Маскот:</p>
+
+<footer>
+  <div class="footer-container">
+    <!-- Про компанію -->
+    <div class="footer-column">
+      <h3>Про компанію</h3>
+      <p>GPU Store – ваш надійний партнер у світі високопродуктивних відеокарт. Ми пропонуємо тільки оригінальні товари з гарантією якості.</p>
+    </div>
+    <!-- Контакти -->
+    <div class="footer-column">
+      <h3>Контакти</h3>
+      <p>📞 +380 (68) 804-07-26</p>
+      <p>📧 info@gpustore.ua</p>
+      <p>📍 м. Київ, вул. Технологічна, 1</p>
+    </div>
+    <!-- Маскот -->
+    <div class="footer-column">
+      <h3>Маскот</h3>
+      <div class="footer-mascot">
+        <img src="Photo/Maskot.webp" alt="Маскот">
+      </div>
+    </div>
   </div>
 
-  <div class="footer-mascot">
-    <img src="Photo/Maskot.webp" alt="Маскот">
-  </div>
+  <p class="footer-copy">&copy; 2025 GPU Store. Усі права захищені.</p>
 </footer>
-
-  
   <!-- Кошик -->
   <div class="cart-modal" id="cartModal">
     <div class="cart-content">
