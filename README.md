@@ -557,7 +557,7 @@
   
   <footer id="contact">
   <div class="footer-info">
-    <p>📞 +380 (XX) XXX-XX-XX</p>
+    <p>📞 +380 (96) 718-94-92</p>
     <p>📧 info@gpustore.ua</p>
     <p>📍 м. Київ, вул. Технологічна, 1</p>
     <p>&copy; 2025 GPU Store. Усі права захищені.</p>
