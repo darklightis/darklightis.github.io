@@ -503,6 +503,12 @@
       transition: color 0.3s;
       height: 100%;
       min-height: 40px;
+      border-radius: 6px;
+    }
+    
+    .nav-menu a:hover {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--accent);
     }
     
     .theme-toggle, .cart-icon {
@@ -789,6 +795,7 @@
       buttons.forEach(btn => btn.classList.remove('active'));
       event.target.classList.add('active');
     }
+    
     // Модальні вікна товарів
     function showProductInfo(modalId) {
       document.getElementById(modalId).style.display = "flex";
@@ -797,7 +804,7 @@
     function closeProductModal(modalId) {
       document.getElementById(modalId).style.display = "none";
     }
-
+    
     // Закриття при кліку поза вікном
     window.onclick = function(event) {
       const modals = document.getElementsByClassName("product-modal");
