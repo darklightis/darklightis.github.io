@@ -609,7 +609,6 @@
     <button class="active" onclick="filterProducts('all')">Всі</button>
     <button onclick="filterProducts('nvidia')">NVIDIA</button>
     <button onclick="filterProducts('amd')">AMD</button>
-    <button onclick="filterProducts('intel')">Intel</button>
   </div>
   
   <section class="products" id="products">
