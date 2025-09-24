@@ -439,10 +439,22 @@
       margin: 8px 0;
       line-height: 1.5;
     }
+    
+    .product-modal-info p strong {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: bold;
+    }
+    
     .product-modal-info h3 {
       color: var(--accent);
       font-size: 1.8rem;
       margin: 20px 0 15px 0;
+    }
+    
+    /* Забираємо підкреслення з усього тексту в модальних вікнах */
+    .product-modal-content * {
+      text-decoration: none;
     }
     
     /* Мобільні стилі */
