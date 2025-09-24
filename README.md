@@ -3,7 +3,6 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GPU Store - Магазин відеокарт</title>
-  
   <style>
     :root {
       --bg: #121212;
@@ -17,9 +16,11 @@
       --card-bg: #fff;
       --accent: #0077ff;
     }
+    
     * {
       box-sizing: border-box;
     }
+    
     body, header, footer, .product-card, .cart-content, .product-modal-content {
       transition: background 0.4s ease, color 0.4s ease;
     }
@@ -169,6 +170,7 @@
       margin-top: 3rem;
       width: 100%;
     }
+    
     .filter-buttons {
       text-align: center;
       margin: 2rem 0;
@@ -191,6 +193,7 @@
     .filter-buttons button.active {
       background: var(--accent);
     }
+    
     /* Кошик */
     .cart-modal {
       display: none;
@@ -225,20 +228,24 @@
       color: var(--text);
       flex-wrap: wrap;
     }
+    
     .cart-item-info {
       flex: 1;
       text-align: left;
       min-width: 150px;
     }
+    
     .cart-item-name {
       font-weight: bold;
       margin-bottom: 5px;
       font-size: 0.9rem;
     }
+    
     .cart-item-price {
       font-size: 0.8rem;
       color: var(--accent);
     }
+    
     .cart-item-controls {
       display: flex;
       align-items: center;
@@ -246,6 +253,7 @@
       flex-wrap: wrap;
       justify-content: center;
     }
+    
     .cart-btn {
       width: 30px;
       height: 30px;
@@ -259,22 +267,27 @@
       justify-content: center;
       transition: all 0.2s ease;
     }
+    
     .cart-btn.decrease, .cart-btn.increase {
       background: var(--accent);
       color: white;
     }
+    
     .cart-btn.decrease:hover, .cart-btn.increase:hover {
       background: #0099cc;
       transform: scale(1.1);
     }
+    
     .cart-btn.remove {
       background: #ff4757;
       color: white;
     }
+    
     .cart-btn.remove:hover {
       background: #ff3742;
       transform: scale(1.1);
     }
+    
     .quantity {
       min-width: 20px;
       text-align: center;
@@ -294,6 +307,7 @@
     .close-cart:hover {
       color: red;
     }
+    
     /* Модальні вікна товарів */
     .product-modal {
       display: none;
@@ -322,6 +336,7 @@
       max-height: 90vh;
       overflow-y: auto;
     }
+    
     .close-modal {
       position: absolute;
       top: 15px;
@@ -336,6 +351,7 @@
     .close-modal:hover {
       color: red;
     }
+    
     .product-modal-body {
       display: flex;
       align-items: flex-start;
@@ -367,6 +383,7 @@
       font-size: 1.8rem;
       margin: 20px 0 15px 0;
     }
+    
     /* Мобільні стилі */
     @media (max-width: 768px) {
       .hero {
@@ -397,6 +414,7 @@
         margin: 3px;
         font-size: 0.8rem;
       }
+      
       .product-modal-content {
         width: 95%;
         margin: 0 auto;
@@ -421,6 +439,10 @@
       .cart-item-info {
         text-align: center;
       }
+    }
+
+    }
+    
     @media (max-width: 480px) {
       .nav-menu {
         flex-wrap: wrap;
@@ -452,99 +474,44 @@
       .cart-content {
         padding: 1rem;
       }
-    #contact {
-       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px;
-      background: #f5f5f5;
     }
-    .footer-info {
-      text-align: left;
-    }
-    }
-      /* Футер */
-#contact {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 25px; /* додав більше відступів для рівності з hero */
-  background: var(--card-bg); /* той же фон, що й у header / карток */
-  max-width: 1200px; /* вирівнювання з секціями */
-  margin: 0 auto;
-  border-radius: 10px 10px 0 0; /* акуратні закруглення */
-}
-.footer-info {
-  text-align: left;
-}
-.footer-mascot {
-  background: rgba(0, 0, 0, 0.05); /* фон контейнера */
-  padding: 10px;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-}
-  footer {
-  background: var(--card-bg);
-  padding: 2rem 1rem;
-  color: var(--text);
-}
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
-.footer-column {
-  flex: 1;
-  min-width: 250px;
-}
-.footer-column h3 {
-  margin-bottom: 1rem;
-  color: var(--accent);
-}
-}
-.footer-mascot img {
-  max-width: 90px; /* трохи менший розмір */
-  height: auto;
-  border-radius: 8px;
-}
-.footer-copy {
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: #aaa;
-}
+    
+    /* Виправлення навігації для однакової висоти */
     .nav-menu {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-  align-items: center;
-  justify-content: center; /* центрування */
-  gap: 0; /* прибираємо зайві відступи */
-}
-
-.nav-menu li {
-  flex: 1;              /* всі однакові по ширині */
-  text-align: center;   /* вирівнювання тексту */
-}
-
-.nav-menu a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: var(--text);
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-
+      list-style: none;
+      display: flex;
+      gap: 0.5rem;
+      margin: 0;
+      padding: 0;
+      align-items: center;
+    }
+    
+    .nav-menu li {
+      display: flex;
+      align-items: center;
+      height: 40px; /* фіксована висота для всіх елементів */
+    }
+    
+    .nav-menu a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1rem;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+      height: 100%;
+      min-height: 40px;
+    }
+    
+    .theme-toggle, .cart-icon {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 40px;
+    }
   </style>
 </head>
 <body>
@@ -561,7 +528,7 @@
     </nav>
   </header>
   
-  <section class="hero" id="">
+  <section class="hero" id="home">
     <h1>Найкращі відеокарти за найкращими цінами</h1>
     <p>Вибери свою ідеальну GPU прямо зараз</p>
   </section>
@@ -583,6 +550,7 @@
         <div class="product-price">65 000 ₴</div>
         <button class="buy-btn" onclick="event.stopPropagation(); addToCart('NVIDIA RTX 4090', 65000)">Купити</button>
       </div>
+      
       <!-- NVIDIA RTX 4080 -->
       <div class="product-card" data-brand="nvidia" onclick="showProductInfo('modal4080')">
         <img src="Photo/4080/4080.jpg" alt="NVIDIA RTX 4080">
@@ -590,6 +558,7 @@
         <div class="product-price">45 000 ₴</div>
         <button class="buy-btn" onclick="event.stopPropagation(); addToCart('NVIDIA RTX 4080', 45000)">Купити</button>
       </div>
+      
       <!-- AMD RX 7900 XTX -->
       <div class="product-card" data-brand="amd" onclick="showProductInfo('modal7900')">
         <img src="Photo/7900xtx/7900xtx.jpg" alt="AMD RX 7900 XTX">
@@ -597,6 +566,7 @@
         <div class="product-price">42 000 ₴</div>
         <button class="buy-btn" onclick="event.stopPropagation(); addToCart('AMD RX 7900 XTX', 42000)">Купити</button>
       </div>
+      
       <!-- Intel ARC A770 -->
       <div class="product-card" data-brand="intel" onclick="showProductInfo('modalArc')">
         <img src="Photo/arc/arc.jpg" alt="Intel ARC A770">
@@ -606,32 +576,14 @@
       </div>
     </div>
   </section>
-
-<footer>
-  <div class="footer-container">
-    <!-- Про компанію -->
-    <div class="footer-column">
-      <h3>Про компанію</h3>
-      <p>GPU Store – ваш надійний партнер у світі високопродуктивних відеокарт. Ми пропонуємо тільки оригінальні товари з гарантією якості.</p>
-    </div>
-    <!-- Контакти -->
-    <div class="footer-column">
-      <h3>Контакти</h3>
-      <p>📞 +380 (68) 804-07-26</p>
-      <p>📧 info@gpustore.ua</p>
-      <p>📍 м. Київ, вул. Технологічна, 1</p>
-    </div>
-    <!-- Маскот -->
-    <div class="footer-column">
-      <h3>Маскот</h3>
-      <div class="footer-mascot">
-        <img src="Photo/Maskot.webp" alt="Маскот">
-      </div>
-    </div>
-  </div>
-
-  <p class="footer-copy">&copy; 2025 GPU Store. Усі права захищені.</p>
-</footer>
+  
+  <footer id="contact">
+    <p>📞 +380 (XX) XXX-XX-XX</p>
+    <p>📧 info@gpustore.ua</p>
+    <p>📍 м. Київ, вул. Технологічна, 1</p>
+    <p>&copy; 2025 GPU Store. Усі права захищені.</p>
+  </footer>
+  
   <!-- Кошик -->
   <div class="cart-modal" id="cartModal">
     <div class="cart-content">
@@ -837,7 +789,6 @@
       buttons.forEach(btn => btn.classList.remove('active'));
       event.target.classList.add('active');
     }
-    
     // Модальні вікна товарів
     function showProductInfo(modalId) {
       document.getElementById(modalId).style.display = "flex";
@@ -846,7 +797,7 @@
     function closeProductModal(modalId) {
       document.getElementById(modalId).style.display = "none";
     }
-    
+
     // Закриття при кліку поза вікном
     window.onclick = function(event) {
       const modals = document.getElementsByClassName("product-modal");
